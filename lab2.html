@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Output Functions Example</title>
+</head>
+<body>
+
+<h1>JavaScript Output Example</h1>
+
+<!-- Placeholder for innerHTML output -->
+<p id="innerHTMLOutput">This text will change using innerHTML.</p>
+
+<!-- Input field for value manipulation -->
+<label for="nameInput">Name: </label>
+<input type="text" id="nameInput" value=""><br><br>
+
+<!-- Button to trigger functions -->
+<button onclick="runFunctions()">Run All Functions</button>
+
+<script>
+    function runFunctions() {
+        // 1. alert()
+        alert("This is an alert box!");
+
+        // 2. console.log()
+        console.log("This message is logged in the console.");
+
+        // 3. document.write() (Will overwrite the document if used here, so use carefully)
+        // This is commented out to avoid replacing the whole document content.
+        // document.write("This text is written directly into the document.");
+
+        // 4. innerHTML
+        document.getElementById("innerHTMLOutput").innerHTML = "Text changed using innerHTML.";
+
+        // 5. prompt()
+        let name = prompt("Please enter your name:", "John Doe");
+        if (name) {
+            alert("Hello, " + name + "!");
+        }
+
+        // 6. confirm()
+        let proceed = confirm("Do you want to continue?");
+        if (proceed) {
+            alert("You pressed OK.");
+        } else {
+            alert("You pressed Cancel.");
+        }
+
+        // 7. Manipulating DOM elements
+        document.getElementById("nameInput").value = name ? name : "John Doe";
+    }
+</script>
+
+</body>
+</html>
